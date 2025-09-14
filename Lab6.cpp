@@ -11,7 +11,7 @@ int main()
 {
     const int SIZE = 5;
     double *numbers = nullptr;
-    int sum = 0;
+    double sum = 0;
 
 
     numbers = enterArrayData(SIZE);
@@ -19,7 +19,6 @@ int main()
     
     sum = sumArray(numbers, SIZE);
     cout << "Sum of values: " << sum << endl;
-
 
     // free up memory
     delete [] numbers;
@@ -38,10 +37,12 @@ double sumArray(double *arr, int size)
 
 void outputArrayData(double *arr, int size)
 {
+    cout << "Outputting array elements: ";
     for (int i = 0; i < size; i++)
     {
-        cout << "Outputting array elements: " << arr[i] << " ";
+        cout << arr[i] << " ";
     }
+    cout << endl;
 }
 
 double* enterArrayData(int size)
@@ -54,7 +55,7 @@ double* enterArrayData(int size)
     cout << "Data entry for the array: " << endl;
     for (int i = 0; i < size; i++)
     {
-        cout << "Element #" << i << ":";
+        cout << "Element #" << i << ": ";
         cin >> element;
         arr[i] = element;
     }
