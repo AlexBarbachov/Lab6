@@ -10,11 +10,15 @@ double* enterArrayData(int size);
 int main() 
 {
     const int SIZE = 5;
-
     double *numbers = nullptr;
+    int sum = 0;
+
+
     numbers = enterArrayData(SIZE);
-
-
+    outputArrayData(numbers, SIZE);
+    
+    sum = sumArray(numbers, SIZE);
+    cout << "Sum of values: " << sum << endl;
 
 
     // free up memory
@@ -23,7 +27,13 @@ int main()
 
 double sumArray(double *arr, int size)
 {
-    
+    double sum = 0;
+    for (int i = 0; i < size; i++)
+    {
+        sum += arr[i];
+    }
+
+    return sum;
 }
 
 void outputArrayData(double *arr, int size)
@@ -48,6 +58,7 @@ double* enterArrayData(int size)
         cin >> element;
         arr[i] = element;
     }
+    cout << "Data entry complete." << endl;
 
     return arr;
 }
